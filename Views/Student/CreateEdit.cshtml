@@ -1,0 +1,41 @@
+﻿@model Student
+@{
+    // List<Department> deptlst = ViewBag.deptlist;
+    SelectList deptlis = new SelectList(ViewBag.deptlist, "DeptId", "DeptName");
+
+
+}
+    <label asp-for="Name">Name</label>
+    <input asp-for="Name" /> <br />
+    <span asp-validation-for="Name" class="text text-danger"></span> <br />
+    <label asp-for="Age">Age</label>
+    <input asp-for="Age" /> <br />
+<span asp-validation-for="Age" class="text text-danger"></span> <br />
+
+    <label asp-for="Email">Email</label>
+    <input asp-for="Email" /> <br />
+<span asp-validation-for="Email" class="text text-danger"></span> <br />
+
+@* <label asp-for="ConfirmEmail">Confirm Email</label>
+<input asp-for="ConfirmEmail" />
+<br />
+<span asp-validation-for="ConfirmEmail" class="text text-danger"></span> *@
+<br />
+
+<br />
+
+<select asp-for="DeptNo" asp-items="deptlis">
+    <option>Select Department</option> 
+  
+</select>
+
+@*     <select asp-for="DeptNo">
+        <option>Select Department</option>
+        @foreach (var item in deptlst)
+        {
+            <option value="@item.DeptId">@item.DeptName</option>
+        }
+
+    </select> *@
+    <span asp-validation-for="DeptNo"></span>
+

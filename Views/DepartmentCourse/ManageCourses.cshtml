@@ -1,0 +1,31 @@
+﻿@model Department
+@{
+    Layout = null;
+    SelectList coursesinDep = new SelectList(Model.Courses, "Id", "Crs_Name");
+    SelectList coursesnotinDep = new SelectList(ViewBag.coursesNotInDept, "Id", "Crs_Name");
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ManageCourses</title>
+</head>
+<body>
+
+    <form method="post">
+        <label>Courses in Dept</label>
+        <select multiple asp-items="coursesinDep" name="CoursetoRemove"> 
+
+        </select>
+        <label>Courses Not in Dept</label>
+
+        <select multiple asp-items="coursesnotinDep" name="CoursetoAdd">
+
+        </select>
+        <input type="submit" value="Change Courses" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿@model Department
+@{
+    Layout = "_layout2";
+    ViewBag.title = "Update Department";
+
+}
+    <form method="post">
+
+   <label asp-for="DeptName"></label>
+          <input asp-for="DeptName" />
+
+        <input type="submit" value="update" />
+
+
+    </form>

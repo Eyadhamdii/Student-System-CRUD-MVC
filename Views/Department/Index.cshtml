@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Department>
+@{
+    Layout = "_layout2";
+    ViewBag.title = "Department List";
+}
+    <a asp-action="create" asp-controller="department" class="btn btn-danger">Create</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Operation</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.DeptId</td>
+                    <td>@item.DeptName</td>
+                    <td>
+                        <a asp-action="details" asp-controller="department" asp-route-id="@item.DeptId" class="btn btn-info">Details</a>
+                    </td>
+                    <td>
+                        <a asp-action="edit" asp-controller="department" asp-route-id="@item.DeptId" class="btn btn-info">Update</a>
+                    </td>
+                    <td>
+                        <a asp-action="delete" asp-controller="department" onclick="return confirm ('Are you sure') " asp-route-id="@item.DeptId"  onclick="" class="btn btn-danger">Delete</a>
+                    </td>
+                    <td>
+                        <a asp-action="showcourses" asp-controller="departmentcourse" asp-route-id="@item.DeptId" class="btn btn-info">Show Courses</a>
+                    </td>
+                    <td>
+                        <a asp-action="managecourses" asp-controller="departmentcourse" asp-route-id="@item.DeptId" class="btn btn-info">Manage Courses</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

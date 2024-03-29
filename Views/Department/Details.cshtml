@@ -1,0 +1,12 @@
+﻿@model Department
+@{
+    Layout = "_layout2";
+    ViewBag.title = "Department Details";
+
+}
+    <h1 class=" alert alert-info">
+        deptid :: @Model.DeptId <br/>
+        deptname :: @Model.DeptName
+    </h1>
+
+    <a asp-action="index" asp-controller="department" class=" btn btn-primary">Return To List</a>

@@ -1,0 +1,23 @@
+﻿@model Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <h1 >
+        Student Name: @Model.Name  <br />
+        Student Age: @Model.Age <br />
+        Department Name: @Model.Department.DeptName <br />
+
+    <a asp-action="index">Return to List</a>
+
+    </h1>
+</body>
+</html>

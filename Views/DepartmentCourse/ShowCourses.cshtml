@@ -1,0 +1,45 @@
+﻿@model Department
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowCourses</title>
+</head>
+<body>
+
+    <div>
+        @Model.DeptName Included Courses
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Course Duration</th>
+                <th>Student Degree</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Courses)
+            {
+                <tr>
+                    <td>
+                        @item.Crs_Name
+                    </td>
+                    <td>
+                        @item.Duration
+                    </td>
+                    <td>
+                        <a asp-action="addStudentDegree" asp-controller="departmentcourse" asp-route-deptid="@Model.DeptId" asp-route-crsid="@item.Id">Add Degree</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
